@@ -1,0 +1,24 @@
+@*@model Merck.Models.MainVM*@
+<section class="container home-interes">
+    <h2 class="main-h2">¡Esto te puede interesar!</h2>
+    <div class="row">
+        @*@foreach (var b in Model.listaBlogs) {
+            <div class="col-md-3 __img-interes">
+                <img src="/Content/uploads/@b.imagen" alt="@b.imagen" class="__img">
+                <div>
+                    <h5>@b.titulo</h5>
+                    <p>@b.contenido.Substring(0, b.contenido.Length > 30 ? 30 : b.contenido.Length)</p>
+                    <a href="/Blog/@b.id/@b.titulo.Replace(" ","-")">Ver mas...</a>
+                </div>
+            </div>
+        }*@
+        <div class="col-md-3 __img-interes">
+            <img src="/Content/uploads/edfwe" alt="werdwe" class="__img">
+            <div>
+                <h5>cwv</h5>
+                <p>cwvfvtrbtrbtrb</p>
+                <a href="/Blog/wef/wef">Ver mas...</a>
+            </div>
+        </div>
+    </div>
+</section>

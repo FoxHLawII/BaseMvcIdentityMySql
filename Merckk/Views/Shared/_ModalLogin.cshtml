@@ -1,0 +1,81 @@
+<!-- Modal inicio de sesion -->
+@using Merckk.Models
+@model LoginViewModel
+<div class="row">
+    <div class="modal fade" id="modalSesionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal__sesion">
+                <!--
+
+                <form action="/Main/Login" method="post">
+                    <div class="modal-header text-center main-modal-header">
+                        <h4 class="modal-title w-100 font-weight-bold">¡Bienvenido!</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        </button>
+                    </div>
+
+                    <div class="modal-body mx-3">
+                        <div class="md-form">
+                            <input type="text" name="usuario.usu" id="orangeForm-email" class="form-control validate modal-input border-bottom" placeholder="E mail">
+                        </div>
+
+                        <div class="md-form">
+                            <input type="password" name="usuario.con" id="orangeForm-pass" class="form-control validate modal-input border-top" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center main-modal-btn">
+                        <button type="submit" class="btn btn-deep-orange modal__sesion__btn">Iniciar Sesión</button>
+                    </div>
+                </form>
+                -->
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
+                    @Html.AntiForgeryToken()
+                    <h4>Use una cuenta local para iniciar sesión.</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Iniciar sesión" class="btn btn-default" />
+                        </div>
+                    </div>
+                    <p>
+                        @Html.ActionLink("Registrar como nuevo usuario", "Register")
+                    </p>
+                    @* Habilite esta opción después de habilitar la confirmación de la cuenta para la función de restablecimiento de contraseña
+                        <p>
+                            @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
+                        </p>*@
+                }
+                <fb:login-button size="large"
+                                 class="btn-fb"
+                                 id="fb-btn"
+                                 scope="public_profile,email"
+                                 onlogin="checkLoginState();">
+                    Ingresa con Facebook
+                </fb:login-button>
+            </div>
+        </div>
+    </div>
+</div>

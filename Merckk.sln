@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Merckk.Data", "Merckk.Data\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Merckk.Domain", "Merckk.Domain\Merckk.Domain.csproj", "{EF776BEA-79FE-4827-AFAB-E791764A928D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Merckk.Services", "Services\Merckk.Services.csproj", "{DC20FF02-4F12-4F0F-96B2-E2CF4DA65AEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EF776BEA-79FE-4827-AFAB-E791764A928D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF776BEA-79FE-4827-AFAB-E791764A928D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF776BEA-79FE-4827-AFAB-E791764A928D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC20FF02-4F12-4F0F-96B2-E2CF4DA65AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC20FF02-4F12-4F0F-96B2-E2CF4DA65AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC20FF02-4F12-4F0F-96B2-E2CF4DA65AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC20FF02-4F12-4F0F-96B2-E2CF4DA65AEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

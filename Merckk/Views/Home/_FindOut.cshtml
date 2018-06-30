@@ -1,0 +1,36 @@
+@*@model Merck.Models.MainVM
+@{
+    var e = Model.eventoRecomendado;
+    var p = Model.promocionRecomendada;
+}*@
+<section>
+    <div class="container-fluid enterate-container">
+        <h2 class="main-h2">Entérate</h2>
+        <div class="row home-enterate">
+            <div class="col-md-6 __col capa-evento">
+                <div class="__eventos">
+                    <img src="/Content/img/icon/eventos-black.svg" alt="Eventos" width="150">
+                    <h3>Consultar <span>Eventos</span></h3>
+                </div>
+            </div>
+            <div class="col-md-6 __col home-evento-interna">
+                <div>
+                    <a href="/eventospromociones/evento"><img src="~/Content/img/evento-1.jpg" alt="Eventos"></a>
+                </div>
+            </div>
+
+            <div class="col-md-6 __col capa-promo">
+                <div class="__promociones">
+                    <img src="/Content/img/icon/promociones-black.svg" alt="Promociones" width="150">
+                    <h3>Consultar <span>Promociones</span></h3>
+                </div>
+            </div>
+            <div class="col-md-6 __col home-promo-interna">
+                <div>
+                    <a href="/eventospromociones/promocion"><img src="~/Content/img/evento-1.jpg" alt="Eventos"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

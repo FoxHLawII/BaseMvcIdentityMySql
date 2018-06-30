@@ -1,0 +1,73 @@
+@*@model Merck.Models.MainVM*@
+<!-- Modal Evento - promocion detalle -->
+<div id="modalDetalleAliado">
+    @{ Html.RenderPartial("__ModalDetalleAliado");}
+</div>
+<!-- End modal -->
+<form action="#" method="GET">
+    <section class="container filter-section">
+        <h2 class="main-h2">¿Que estas buscando?</h2>
+        <div class="row filter-home">
+            <div class="btn-group-toggle col-md-12" data-toggle="buttons">
+                @*@foreach (var s in Model.listaServicios) {
+            var img = s.nombre.Replace(" ", "-") + ".svg";
+            <label class="btn btn-outline-light __label displacement-result" data-ancla="displacement-result">
+                <input type="radio" name="idServicio" value="@s.id">
+                <img src="/Content/img/icon/@img" alt="@img" width="50" class="">
+                <p>@s.nombre</p>
+            </label>
+        }*@
+                <label class="btn btn-outline-light __label displacement-result" data-ancla="displacement-result">
+                    <input type="radio" name="idServicio" value="1">
+                    <img src="/Content/img/icon/s" alt="s" width="50" class="">
+                    <p>sss</p>
+                </label>
+                <label class="btn btn-outline-light __label muestra-oculta" for="toggle-oculto1">
+                    <input type="button" id="toggle-oculto1" autocomplete="off" class="clear-check"><img src="/Content/img/icon/especialistasIcon.svg" alt="Consulta" width="50"> Especialistas
+                </label>
+            </div>
+        </div>
+        <div class="btn-group-toggle home-specialist-filter display-none"
+             data-toggle="buttons" style="display: none;">
+            @*@foreach (var e in Model.listaEspecialidades) {
+            <label class="btn btn-light __label">
+                <input type="radio" name="idEspecialidad" value="@e.id"> @e.nombre
+            </label>
+        }*@
+            <label class="btn btn-light __label">
+                <input type="radio" name="idEspecialidad" value="1"> ssddddd
+            </label>
+        </div>
+    </section>
+    <div class="container-fluid">
+        <div class="row margin-bottom-40px margin-top-20px" id="displacement-result">
+            <div class="col-md-3">
+                <select id="inputState" class="home-form-select" name="idCiudad">
+                    <option selected>Seleccione...</option>
+                    @*@foreach (var c in Model.listaCiudades) {
+            <option value="@c.id">@c.nombre</option>
+        }*@
+                    <option value="1">skdjhfjksdf</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <input type="text" class="home-form-search" id="inputCity" placeholder="Direccion">
+            </div>
+            <div class="form-group col-md-2">
+                <button type="button"  id="btnBuscar" class="btn btn-light home-button-search">Buscar</button>
+            </div>
+            <a href="#" class="main-clear-a col-md-3">
+                <div class="home-info-map">
+                    <img src="/Content/img/mapa.jpg" alt="Mapa" width="290" height="90" class="home-img-map">
+                    <div class="__info-content">
+                        <img src="/Content/img/icon/ubicacion.svg" alt="Ubicacion" width="100">
+                        <p>Ver Cerca a mi Ubicación</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div id="aliadosFiltrados" class="container display-none">
+        @{ Html.RenderPartial("__AliadosFiltrados"); }
+    </div>
+</form>

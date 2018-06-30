@@ -1,0 +1,62 @@
+@*@model Merck.Models.MainVM*@
+<section class="container-fluid hero-home">
+    <div class="row __top-content">
+        <div class="col-md-6">
+            <h2>¡Lleva el Control del <span>Ciclo de Vida</span> de Tu <span>Mascota!</span></h2>
+        </div>
+        <div class="col-md-6 parent-box-owner-form">
+            <div class="box-owner-form">
+                <h3 class="__h3">Carnét Oficial de <span>Mascotas Saludables</span></h3>
+                <p>Mascota</p><p>Propietario</p>
+                <form action="/Main/RegistroPropietario" method="post" id="owner-form">
+                    <div>
+                        <h3></h3>
+                        <section>
+                            <div class="btn-group-toggle owner-p-y-g" data-toggle="buttons">
+                                @*@foreach (var c in Model.listaCategorias) {
+            <label class="btn btn-light" onclick="checkCategoria(this)">
+                <input type="radio" name="idCategoria" value="@c.id"><img src="~/Content/img/icon/categoria-perro.svg" alt="Hueso"  width="40"/> @c.nombre
+            </label>
+        }*@
+                                <label class="btn btn-light" onclick="checkCategoria(this)">
+                                    <input type="radio" name="idCategoria" value="1"><img src="~/Content/img/icon/categoria-perro.svg" alt="Hueso" width="40" /> Perro
+                                </label>
+                            </div>
+                            <label for="userName"></label>
+                            <input name="mascota[0].nombre" type="text" class="required owner-form-home-input" placeholder="Nombre">
+                            <div class="row">
+                                <select id="idRaza" name="mascota[0].idRaza" class="col-md-6 owner-form-home-select">
+                                    <option>Raza...</option>
+                                </select>
+                                <div class="col-md-6">
+                                    <input type="text" name="mascota[0].fechaNacimiento" class="owner-form-home-select" placeholder="Edad"/>
+                                </div>
+                            </div>
+                            <p class="bold">Genero:</p>
+                            <div class="btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-light owner-form-home-gender">
+                                    <input type="radio" name="mascota[0].idGenero" value="3"> Macho
+                                </label>
+                                <label class="btn btn-light owner-form-home-gender">
+                                    <input type="radio" name="mascota[0].idGenero" value="4"> Hembra
+                                </label>
+                            </div>
+                            <input type="hidden" name="mascota[0].isActiva" value="true" />
+                        </section>
+                        <h3></h3>
+                        <section>
+                            <input id="name" name="nombre" type="text" class="required owner-form-home-input" placeholder="Tu Nombre">
+                            <input id="email" name="usuario.usu" type="email" class="required email owner-form-home-input" placeholder="Tu Correo">
+                            <input name="usuario.con" type="password" placeholder="Tu Contraseña" class="owner-form-home-input">
+                            <input name="usuario.verif" type="password" placeholder="Confirma tu Contraseña" class="owner-form-home-input">
+                            <input type="checkbox" name="Terminos" value="" />He leido y acepto Términos y Condiciones
+                        </section>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--<div class="__hero-img col-md-12">
+            <img src="/Content/img/homeMainImage.png" alt="Hero home" width="900" class="img-fluid">
+        </div>-->
+    </div>
+</section>
